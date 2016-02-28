@@ -5,6 +5,8 @@ cSphere at HeheCloud
 
 ## Usage
 
+### use the `fleetctl` command
+
 ```
 $ etcdctl mk /hehe/services/csphere/authkey <generated a string as auth key>
 $ fleetctl load deis-csphere.service && \
