@@ -15,18 +15,18 @@ $ fleetctl load deis-csphere.service && \
 
 * Click the "启动" button
 
-![](get.hehecloud.com/images/services/csphere-1.png)
+![](http://get.hehecloud.com/images/services/csphere-1.png)
 
 * Wait started, and visit the url
 
-![](get.hehecloud.com/images/services/csphere-2.png)
+![](http://get.hehecloud.com/images/services/csphere-2.png)
 
 * Found your hosts
 
-![](get.hehecloud.com/images/services/csphere-3.png)
+![](http://get.hehecloud.com/images/services/csphere-3.png)
 
 
-![][get.hehecloud.com/images/services/csphere-4.png]
+![](http://get.hehecloud.com/images/services/csphere-4.png)
 
 
 
