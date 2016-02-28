@@ -12,10 +12,10 @@ Environment=CONTROLLER_PORT=1016
 Environment=ETCD_PATH_AUTH_KEY=/hehe/services/csphere/authkey
 Environment=ETCD_PATH_CONTROLLER_HOST=/hehe/services/csphere/controller/host
 Environment=ETCD_PATH_CONTROLLER_URL=/hehe/services/csphere/controller/url
-ExecStartPre=-/bin/sh -c "rm -rf $DATA_DIR"
 ExecStartPre=/bin/sh -c "docker history $IMAGE >/dev/null 2>&1 || flock -w 1200 /var/run/lock/csphere-pull docker pull $IMAGE"
 ExecStartPre=/bin/sh -c "docker ps -a | grep 'csphere-' | awk '{print $1}'| xargs --no-run-if-empty docker stop -t 300 >/dev/null 2>&1 || true"
 ExecStartPre=/bin/sh -c "docker ps -a | grep 'csphere-' | awk '{print $1}'| xargs --no-run-if-empty docker rm -f >/dev/null 2>&1 || true"
+ExecStartPre=-/bin/sh -c "rm -rf $DATA_DIR"
 ExecStartPre=-/bin/sh -c "etcdctl mk $ETCD_PATH_CONTROLLER_HOST $COREOS_PRIVATE_IPV4 >/dev/null 2>&1"
 ExecStartPre=/bin/sh -c 'if [[ "$(etcdctl get $ETCD_PATH_CONTROLLER_HOST)" == "$COREOS_PRIVATE_IPV4" ]]; then \
   echo "Starting csphere-controller..." && \
